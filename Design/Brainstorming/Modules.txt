@@ -87,3 +87,6 @@ The Game Modules
 	- Electricity Module
 28 - Gas Module
 	- Gas Stations
+29 - Construction Module
+	- Buildings
+	- Available Places
