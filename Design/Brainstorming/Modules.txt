@@ -1,0 +1,89 @@
+The Game Modules
+----------------
+01 - Game Module
+	- Game Loop
+	- Game Time
+	- Modules Communications
+02 - Human Module
+	- Persons
+	- Relations
+	- Families
+03 - World Module
+	- Regions
+	- Maps
+04 - Financial Module
+	- Budgets
+	- Income
+	- Expense
+05 - Job Module
+	- Available Jobs
+	- Allocating Humans to Jobs
+	- Salaries
+	- Positions
+06 - Production Module
+	- Factory
+	- Goods Produces
+07 - Agriculture Module
+	- Farms
+	- Animals
+08 - Consuming Module
+	- Foods
+	- Drinks
+	- Clothes
+	- Auxiliary Goods
+09 - Trade Module
+	- Import
+	- Export
+	- Local Trade	
+10 - Diplomacy Module
+	- Relations between Countries
+11 - Defence Module
+	- Armies
+	- Weapons
+	- Camps
+12 - Security Module
+	- Police Stations
+	- Prisons
+13 - Politics Module
+	- Governers
+14 - Education Module
+	- Schools
+	- Faculties
+15 - Religion Module
+	- Pray Locations
+	- Imams
+16 - Transportation Module
+	- Transportation Tools
+	- Roads
+17 - Health Module
+	- Hospitals
+18 - Judgement Module
+	- Judges
+	- Laws
+19 - Housing Module
+	- Houses
+	- Residential Areas
+	- Allocationg Citizens to Houses
+20 - Telecommunication Module
+	- Communications Tools
+	- Spreading Info between locals
+	- Transfering Info to outside
+21 - Tourism Module
+	- Tourism Places
+22 - Travelling Module
+	- Travellers
+	- Trips
+23 - Resources Module
+	- Region Resources
+	- Resources Collecting
+24 - Environment Module
+	- Gardens
+	- Garbage
+25 - Water Module
+	- Water Statitions
+26 - Storing Module
+	- Stores
+27 - Electricity Module
+	- Electricity Module
+28 - Gas Module
+	- Gas Stations
