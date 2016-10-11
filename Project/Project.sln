@@ -13,6 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{BB0E1791-6
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Government", "Game\Government\Government.vcxproj", "{817D9499-231B-450E-83B8-59414A5412B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{AE15A0A4-F053-478C-80EF-556E95789014}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brainstorming", "Brainstorming", "{B1655881-3F91-4533-A454-D9EAABF12BFC}"
+	ProjectSection(SolutionItems) = preProject
+		..\Design\Brainstorming\Modules.txt = ..\Design\Brainstorming\Modules.txt
+		..\Design\Brainstorming\Technologies.txt = ..\Design\Brainstorming\Technologies.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{47777F61-44B9-4506-8414-38CFD7D32695}"
+	ProjectSection(SolutionItems) = preProject
+		..\Design\Brainstorming\Modules\Game Module.txt = ..\Design\Brainstorming\Modules\Game Module.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -35,5 +48,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{817D9499-231B-450E-83B8-59414A5412B9} = {BB0E1791-6A09-42BD-9CDC-5C2323701FF7}
+		{B1655881-3F91-4533-A454-D9EAABF12BFC} = {AE15A0A4-F053-478C-80EF-556E95789014}
+		{47777F61-44B9-4506-8414-38CFD7D32695} = {B1655881-3F91-4533-A454-D9EAABF12BFC}
 	EndGlobalSection
 EndGlobal
