@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{EA78EB49-9430-477D-96EF-D6B45EC793D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{C6205F77-1B5D-4DD0-A5B9-3AE2EED9AA69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{1EBCF614-54BF-43A7-A862-EF07F2255743}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{BB0E1791-6A09-42BD-9CDC-5C2323701FF7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Government", "Game\Government\Government.vcxproj", "{817D9499-231B-450E-83B8-59414A5412B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{817D9499-231B-450E-83B8-59414A5412B9}.Debug|x64.ActiveCfg = Debug|x64
+		{817D9499-231B-450E-83B8-59414A5412B9}.Debug|x64.Build.0 = Debug|x64
+		{817D9499-231B-450E-83B8-59414A5412B9}.Debug|x86.ActiveCfg = Debug|Win32
+		{817D9499-231B-450E-83B8-59414A5412B9}.Debug|x86.Build.0 = Debug|Win32
+		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x64.ActiveCfg = Release|x64
+		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x64.Build.0 = Release|x64
+		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x86.ActiveCfg = Release|Win32
+		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{817D9499-231B-450E-83B8-59414A5412B9} = {BB0E1791-6A09-42BD-9CDC-5C2323701FF7}
+	EndGlobalSection
+EndGlobal
