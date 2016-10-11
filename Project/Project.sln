@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{4777
 		..\Design\Brainstorming\Modules\Game Module.txt = ..\Design\Brainstorming\Modules\Game Module.txt
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameModule", "GameModule\GameModule.vcxproj", "{F6B93DA3-D991-4343-B7EA-493CE4E78427}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -42,6 +44,14 @@ Global
 		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x64.Build.0 = Release|x64
 		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x86.ActiveCfg = Release|Win32
 		{817D9499-231B-450E-83B8-59414A5412B9}.Release|x86.Build.0 = Release|Win32
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Debug|x64.ActiveCfg = Debug|x64
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Debug|x64.Build.0 = Debug|x64
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Debug|x86.Build.0 = Debug|Win32
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Release|x64.ActiveCfg = Release|x64
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Release|x64.Build.0 = Release|x64
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Release|x86.ActiveCfg = Release|Win32
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +60,6 @@ Global
 		{817D9499-231B-450E-83B8-59414A5412B9} = {BB0E1791-6A09-42BD-9CDC-5C2323701FF7}
 		{B1655881-3F91-4533-A454-D9EAABF12BFC} = {AE15A0A4-F053-478C-80EF-556E95789014}
 		{47777F61-44B9-4506-8414-38CFD7D32695} = {B1655881-3F91-4533-A454-D9EAABF12BFC}
+		{F6B93DA3-D991-4343-B7EA-493CE4E78427} = {EA78EB49-9430-477D-96EF-D6B45EC793D3}
 	EndGlobalSection
 EndGlobal
