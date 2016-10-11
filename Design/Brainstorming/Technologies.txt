@@ -1,4 +1,4 @@
-- We will use C# to implement game modules
+- We will use C++ to implement game modules
 - each module is implemented in a separate dll
-- the end-application will be implemented using unity engine
+- the end-application will be implemented using ogre3d engine
 - each dll implements a mechanism to share its internal info to others
