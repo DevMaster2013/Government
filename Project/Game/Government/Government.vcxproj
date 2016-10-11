@@ -144,6 +144,11 @@
   <ItemGroup>
     <ClCompile Include="Government.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GameModule\GameModule.vcxproj">
+      <Project>{f6b93da3-d991-4343-b7ea-493ce4e78427}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

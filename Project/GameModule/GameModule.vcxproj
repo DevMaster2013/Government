@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseGameModule.h" />
+    <ClInclude Include="BaseGameObject.h" />
+    <ClInclude Include="BaseGameArchive.h" />
+    <ClInclude Include="BaseGameLog.h" />
+    <ClInclude Include="GameModule.h" />
+    <ClInclude Include="GameTimeSpan.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseGameArchive.cpp" />
+    <ClCompile Include="BaseGameLog.cpp" />
+    <ClCompile Include="BaseGameModule.cpp" />
+    <ClCompile Include="BaseGameObject.cpp" />
+    <ClCompile Include="GameTimeSpan.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F6B93DA3-D991-4343-B7EA-493CE4E78427}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

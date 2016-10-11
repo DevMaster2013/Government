@@ -6,20 +6,21 @@
 - Basic Game Module Integration and Sub Modules integration
 - Basic Communications between modules
 - Saving and Loading Games
+- Logging in the game
 -----------------------------------------------------------------------------------------
-- IGameObject
-- IGameArchive
-- IGameModule
-- BaseGameObject : IGameObject
-- BaseGameModule : IGameModule
-- BaseGameArchive : IGameArchive
+- BaseGameObject
+- BaseGameModule
+- BaseGameArchive
+- BaseGameLog
+- GameClock
+- TimeSpan (Suitable for elapsed time)
+- DateOffset (Suitable for ages)
+- GameObjectDatabase
+- GameLogManager
 - Game : BaseGameModule
 - TextGameArchive : BaseGameArchive
 - BinGameArchive : BaseGameArchive
 - XmlGameArchive : BaseGameArchive
-- GameClock
-- TimeSpan
-- GameObjectDatabase
 ------------------------------------------------------------------------------------------
 - The GameObjectDatabase is a collection of all game objects in the game
 - The Gameobjects is references using thier unique IDs that are stored in GameObjectDatabase
@@ -32,3 +33,4 @@
 - The GameModule is composed of game objects that belong to the modules
 - The GameClock provide functions to getElapsedTime, and getTime, and provide equality operators
 - The Archives provide functions that read and write different types of info
+- The DateOffset class get the detailed amount of time passed from start date with the attached time span
