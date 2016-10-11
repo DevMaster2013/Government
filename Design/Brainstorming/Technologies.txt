@@ -1,4 +1,4 @@
 - We will use C++ to implement game modules
-- each module is implemented in a separate dll
+- each module is implemented in a separate static library
 - the end-application will be implemented using ogre3d engine
-- each dll implements a mechanism to share its internal info to others
+- each module implements a mechanism to share its internal info to others
