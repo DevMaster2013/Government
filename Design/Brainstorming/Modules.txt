@@ -90,3 +90,9 @@ The Game Modules
 29 - Construction Module
 	- Buildings
 	- Available Places
+30 - Database Module
+	- Game Objects database streaming
+31 - Graphics Module
+	- Rendering
+32 - AI Module
+	- Computer AI

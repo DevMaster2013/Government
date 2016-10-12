@@ -21,19 +21,19 @@
   <ItemGroup>
     <ClInclude Include="BaseGameModule.h" />
     <ClInclude Include="BaseGameObject.h" />
-    <ClInclude Include="BaseGameArchive.h" />
     <ClInclude Include="BaseGameLog.h" />
     <ClInclude Include="DateTime.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameClock.h" />
     <ClInclude Include="GameModule.h" />
     <ClInclude Include="TimeSpan.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseGameArchive.cpp" />
     <ClCompile Include="BaseGameLog.cpp" />
     <ClCompile Include="BaseGameModule.cpp" />
     <ClCompile Include="BaseGameObject.cpp" />
     <ClCompile Include="DateTime.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameClock.cpp" />
     <ClCompile Include="TimeSpan.cpp" />
   </ItemGroup>

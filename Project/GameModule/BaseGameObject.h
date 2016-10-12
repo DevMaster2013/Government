@@ -9,7 +9,7 @@ namespace gov
 	///
 	class BaseGameObject
 	{
-	private:
+	protected:
 		std::string _name;	/// The name of the game object
 		std::string _id;	/// The ID of the game object
 

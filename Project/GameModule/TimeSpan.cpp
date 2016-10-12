@@ -53,13 +53,13 @@ gov::TimeSpan gov::TimeSpan::fromMilliseconds(double milliseconds)
 	double hours = minutes / MINUTES_IN_HOUR;
 	double days = hours / HOURS_IN_DAY;
 
-	timeSpan._days = static_cast<int>(std::floor(days));
+	timeSpan._days = static_cast<int>(std::floor(days + 0.01));
 	hours = (days - timeSpan._days) * HOURS_IN_DAY;
-	timeSpan._hours = static_cast<int>(std::floor(hours));
+	timeSpan._hours = static_cast<int>(std::floor(hours + 0.01));
 	minutes = (hours - timeSpan._hours) * MINUTES_IN_HOUR;
-	timeSpan._minutes = static_cast<int>(std::floor(minutes));
+	timeSpan._minutes = static_cast<int>(std::floor(minutes + 0.01));
 	seconds = (minutes - timeSpan._minutes) * SECONDS_IN_MINUTE;
-	timeSpan._seconds = static_cast<int>(std::floor(seconds));
+	timeSpan._seconds = static_cast<int>(std::floor(seconds + 0.01));
 	timeSpan._milliseconds = static_cast<int>(std::round((seconds - timeSpan._seconds) * MILLISECONDS_IN_SECOND));
 
 	return timeSpan;

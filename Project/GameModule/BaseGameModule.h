@@ -9,7 +9,7 @@ namespace gov
 {
 	class BaseGameModule : public  BaseGameObject
 	{
-	private:
+	protected:
 		std::map<std::string, BaseGameModule*> _subModules;	/// The collection of sub modules in the module
 
 	public:

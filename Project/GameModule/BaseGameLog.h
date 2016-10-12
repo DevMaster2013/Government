@@ -10,7 +10,7 @@ namespace gov
 	///
 	class BaseGameLog
 	{
-	private:
+	protected:
 		std::ofstream _logStream;	/// The stream used in logging messages
 
 	public:

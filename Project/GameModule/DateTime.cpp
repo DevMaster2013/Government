@@ -179,7 +179,7 @@ DateTime & gov::DateTime::operator=(const DateTime & rhs)
 bool gov::DateTime::operator==(const DateTime & rhs)
 {
 	bool equals = (_year == rhs._year) && (_month == rhs._month)
-		&& (_day == rhs._day) && (_hour == rhs._day) && (_minute == rhs._minute)
+		&& (_day == rhs._day) && (_hour == rhs._hour) && (_minute == rhs._minute)
 		&& (_second == rhs._second) && (_milliseconds == rhs._milliseconds);
 	return equals;
 }
@@ -325,24 +325,44 @@ DateTime gov::DateTime::operator+(const TimeSpan & rhs)
 	return current;
 }
 
-TimeSpan gov::DateTime::operator-(const DateTime & rhs)
+TimeSpan gov::DateTime::operator-(const DateTime& rhs)
 {
 	TimeSpan elapsedTime;
-	if (*this < rhs)
+	DateTime cur(*this);
+
+	if (cur < rhs)
 	{
-		elapsedTime = *(const_cast<DateTime*>(&rhs)) - *(const_cast<DateTime*>(this));
-		return elapsedTime.reverse();
+		elapsedTime = *(const_cast<DateTime*>(&rhs)) - *(const_cast<DateTime*>(&cur));
+		elapsedTime = elapsedTime.reverse();
+	}	
+	else
+	{
+		if (_year == rhs._year && _month == rhs._month && _day == rhs._day)
+		{
+			elapsedTime = TimeSpan(0, _hour, _minute, _second, _milliseconds)
+				- TimeSpan(0, rhs._hour, rhs._minute, rhs._second, rhs._milliseconds);
+		}
+		else
+		{
+			elapsedTime += TimeSpan::fromDays(1.0) - rhs.getDayTime();
+			elapsedTime += getDayTime();
+
+			if (rhs._year == _year)
+			{
+				elapsedTime += TimeSpan::fromDays(getDayOfYear() - rhs.getDayOfYear() - 1);
+			}
+			else
+			{
+				elapsedTime += TimeSpan::fromDays(getDaysInYear(rhs._year + 1) - rhs.getDayOfYear() - 1);
+				elapsedTime += TimeSpan::fromDays(getDayOfYear());
+
+				for (unsigned short year = rhs._year + 1; year < _year; year++)
+					elapsedTime += TimeSpan::fromDays(getDaysInYear(year));
+			}
+		}
 	}
-	
-	elapsedTime += TimeSpan::fromDays(1.0) - rhs.getDayTime();
-	elapsedTime += getDayTime();
 
-	elapsedTime += TimeSpan::fromDays(getDaysInYear(rhs._year + 1) - rhs.getDayOfYear() - 1);
-	elapsedTime += TimeSpan::fromDays(getDayOfYear());
-
-	for (unsigned short year = rhs._year + 1; year < _year; year++)
-		elapsedTime += TimeSpan::fromDays(getDaysInYear(year));
-	return elapsedTime;
+	return elapsedTime.simplify();
 }
 
 DateTime & gov::DateTime::operator+=(const DateTime & rhs)
