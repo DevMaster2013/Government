@@ -1,4 +1,4 @@
-#include "GameTimeSpan.h"
+#include "TimeSpan.h"
 #include <cmath>
 #include <limits>
 
@@ -13,7 +13,7 @@ static const double SECONDS_IN_HOUR = MINUTES_IN_HOUR * SECONDS_IN_MINUTE;
 static const double SECONDS_IN_DAY = HOURS_IN_DAY * SECONDS_IN_HOUR;
 static const double MINUTES_IN_DAY = MINUTES_IN_HOUR * HOURS_IN_DAY;
 
-gov::GameTimeSpan::GameTimeSpan()
+gov::TimeSpan::TimeSpan()
 	: _days(0)
 	, _hours(0)
 	, _minutes(0)
@@ -22,7 +22,7 @@ gov::GameTimeSpan::GameTimeSpan()
 {
 }
 
-gov::GameTimeSpan::GameTimeSpan(int days, int hours, int minutes, int seconds, int milliseconds)
+gov::TimeSpan::TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds)
 	: _days(days)
 	, _hours(hours)
 	, _minutes(minutes)
@@ -31,7 +31,7 @@ gov::GameTimeSpan::GameTimeSpan(int days, int hours, int minutes, int seconds, i
 {
 }
 
-gov::GameTimeSpan::GameTimeSpan(const GameTimeSpan& src)
+gov::TimeSpan::TimeSpan(const TimeSpan& src)
 	: _days(src._days)
 	, _hours(src._hours)
 	, _minutes(src._minutes)
@@ -40,13 +40,13 @@ gov::GameTimeSpan::GameTimeSpan(const GameTimeSpan& src)
 {
 }
 
-gov::GameTimeSpan::~GameTimeSpan()
+gov::TimeSpan::~TimeSpan()
 {
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::fromMilliseconds(double milliseconds)
+gov::TimeSpan gov::TimeSpan::fromMilliseconds(double milliseconds)
 {
-	GameTimeSpan timeSpan;
+	TimeSpan timeSpan;
 
 	double seconds = milliseconds / MILLISECONDS_IN_SECOND;
 	double minutes = seconds / SECONDS_IN_MINUTE;
@@ -65,52 +65,52 @@ gov::GameTimeSpan gov::GameTimeSpan::fromMilliseconds(double milliseconds)
 	return timeSpan;
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::fromSeconds(double seconds)
+gov::TimeSpan gov::TimeSpan::fromSeconds(double seconds)
 {
 	return fromMilliseconds(seconds * MILLISECONDS_IN_SECOND);
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::fromMinutes(double minutes)
+gov::TimeSpan gov::TimeSpan::fromMinutes(double minutes)
 {
 	return fromSeconds(minutes * SECONDS_IN_MINUTE);
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::fromHours(double hours)
+gov::TimeSpan gov::TimeSpan::fromHours(double hours)
 {
 	return fromMinutes(hours * MINUTES_IN_HOUR);
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::fromDays(double days)
+gov::TimeSpan gov::TimeSpan::fromDays(double days)
 {
 	return fromHours(days * HOURS_IN_DAY);
 }
 
-int gov::GameTimeSpan::getDays() const
+int gov::TimeSpan::getDays() const
 {
 	return _days;
 }
 
-int gov::GameTimeSpan::getHours() const
+int gov::TimeSpan::getHours() const
 {
 	return _hours;
 }
 
-int gov::GameTimeSpan::getMinutes() const
+int gov::TimeSpan::getMinutes() const
 {
 	return _minutes;
 }
 
-int gov::GameTimeSpan::getSeconds() const
+int gov::TimeSpan::getSeconds() const
 {
 	return _seconds;
 }
 
-int gov::GameTimeSpan::getMilliseconds() const
+int gov::TimeSpan::getMilliseconds() const
 {
 	return _milliseconds;
 }
 
-double gov::GameTimeSpan::getTotalDays() const
+double gov::TimeSpan::getTotalDays() const
 {
 	double days = 
 		_days +
@@ -121,7 +121,7 @@ double gov::GameTimeSpan::getTotalDays() const
 	return days;
 }
 
-double gov::GameTimeSpan::getTotalHours() const
+double gov::TimeSpan::getTotalHours() const
 {
 	double hours =
 		_days * HOURS_IN_DAY +
@@ -132,7 +132,7 @@ double gov::GameTimeSpan::getTotalHours() const
 	return hours;
 }
 
-double gov::GameTimeSpan::getTotalMinutes() const
+double gov::TimeSpan::getTotalMinutes() const
 {
 	double minutes =
 		_days * MINUTES_IN_DAY +
@@ -143,7 +143,7 @@ double gov::GameTimeSpan::getTotalMinutes() const
 	return minutes;
 }
 
-double gov::GameTimeSpan::getTotalSeconds() const
+double gov::TimeSpan::getTotalSeconds() const
 {
 	double seconds =
 		_days * SECONDS_IN_DAY +
@@ -154,7 +154,7 @@ double gov::GameTimeSpan::getTotalSeconds() const
 	return seconds;
 }
 
-double gov::GameTimeSpan::getTotalMilliseconds() const
+double gov::TimeSpan::getTotalMilliseconds() const
 {
 	double milliseconds =
 		_days * MILLISECONDS_IN_DAY +
@@ -165,7 +165,17 @@ double gov::GameTimeSpan::getTotalMilliseconds() const
 	return milliseconds;
 }
 
-gov::GameTimeSpan& gov::GameTimeSpan::operator=(const GameTimeSpan & rhs)
+gov::TimeSpan gov::TimeSpan::simplify() const
+{
+	return TimeSpan::fromMilliseconds(getTotalMilliseconds());
+}
+
+gov::TimeSpan gov::TimeSpan::reverse() const
+{
+	return TimeSpan(-_days, -_hours, -_minutes, -_seconds, -_milliseconds);
+}
+
+gov::TimeSpan& gov::TimeSpan::operator=(const TimeSpan & rhs)
 {
 	if (this == &rhs)
 		return *this;
@@ -179,72 +189,72 @@ gov::GameTimeSpan& gov::GameTimeSpan::operator=(const GameTimeSpan & rhs)
 	return *this;
 }
 
-bool gov::GameTimeSpan::operator==(const GameTimeSpan & rhs)
+bool gov::TimeSpan::operator==(const TimeSpan & rhs)
 {
 	return std::abs(getTotalMilliseconds() - rhs.getTotalMilliseconds()) < DBL_EPSILON;
 }
 
-bool gov::GameTimeSpan::operator!=(const GameTimeSpan & rhs)
+bool gov::TimeSpan::operator!=(const TimeSpan & rhs)
 {
 	return !(*this == rhs);
 }
 
-bool gov::GameTimeSpan::operator>(const GameTimeSpan & rhs)
+bool gov::TimeSpan::operator>(const TimeSpan & rhs)
 {
 	return getTotalMilliseconds() > rhs.getTotalMilliseconds();
 }
 
-bool gov::GameTimeSpan::operator<(const GameTimeSpan & rhs)
+bool gov::TimeSpan::operator<(const TimeSpan & rhs)
 {
 	return getTotalMilliseconds() < rhs.getTotalMilliseconds();
 }
 
-bool gov::GameTimeSpan::operator>=(const GameTimeSpan & rhs)
+bool gov::TimeSpan::operator>=(const TimeSpan & rhs)
 {
 	return getTotalMilliseconds() >= rhs.getTotalMilliseconds();
 }
 
-bool gov::GameTimeSpan::operator<=(const GameTimeSpan & rhs)
+bool gov::TimeSpan::operator<=(const TimeSpan & rhs)
 {
 	return getTotalMilliseconds() <= rhs.getTotalMilliseconds();
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::operator+(const GameTimeSpan & rhs)
+gov::TimeSpan gov::TimeSpan::operator+(const TimeSpan & rhs)
 {
 	return fromMilliseconds(getTotalMilliseconds() + rhs.getTotalMilliseconds());
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::operator-(const GameTimeSpan & rhs)
+gov::TimeSpan gov::TimeSpan::operator-(const TimeSpan & rhs)
 {
 	return fromMilliseconds(getTotalMilliseconds() - rhs.getTotalMilliseconds());
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::operator*(double scale)
+gov::TimeSpan gov::TimeSpan::operator*(double scale)
 {
 	return fromMilliseconds(getTotalMilliseconds() * scale);
 }
 
-gov::GameTimeSpan gov::GameTimeSpan::operator/(double scale)
+gov::TimeSpan gov::TimeSpan::operator/(double scale)
 {
 	return fromMilliseconds(getTotalMilliseconds() / scale);
 }
 
-gov::GameTimeSpan& gov::GameTimeSpan::operator+=(const GameTimeSpan & rhs)
+gov::TimeSpan& gov::TimeSpan::operator+=(const TimeSpan & rhs)
 {
 	return (*this = *this + rhs);
 }
 
-gov::GameTimeSpan& gov::GameTimeSpan::operator-=(const GameTimeSpan & rhs)
+gov::TimeSpan& gov::TimeSpan::operator-=(const TimeSpan & rhs)
 {
 	return (*this = *this - rhs);
 }
 
-gov::GameTimeSpan& gov::GameTimeSpan::operator*=(double scale)
+gov::TimeSpan& gov::TimeSpan::operator*=(double scale)
 {
 	return (*this = *this * scale);
 }
 
-gov::GameTimeSpan& gov::GameTimeSpan::operator/=(double scale)
+gov::TimeSpan& gov::TimeSpan::operator/=(double scale)
 {
 	return (*this = *this / scale);
 }

@@ -4,4 +4,5 @@
 #include "BaseGameLog.h"
 #include "BaseGameArchive.h"
 #include "BaseGameModule.h"
-#include "GameTimeSpan.h"
+#include "TimeSpan.h"
+#include "DateTime.h"

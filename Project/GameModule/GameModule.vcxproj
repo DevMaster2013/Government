@@ -23,15 +23,19 @@
     <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="BaseGameArchive.h" />
     <ClInclude Include="BaseGameLog.h" />
+    <ClInclude Include="DateTime.h" />
+    <ClInclude Include="GameClock.h" />
     <ClInclude Include="GameModule.h" />
-    <ClInclude Include="GameTimeSpan.h" />
+    <ClInclude Include="TimeSpan.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseGameArchive.cpp" />
     <ClCompile Include="BaseGameLog.cpp" />
     <ClCompile Include="BaseGameModule.cpp" />
     <ClCompile Include="BaseGameObject.cpp" />
-    <ClCompile Include="GameTimeSpan.cpp" />
+    <ClCompile Include="DateTime.cpp" />
+    <ClCompile Include="GameClock.cpp" />
+    <ClCompile Include="TimeSpan.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F6B93DA3-D991-4343-B7EA-493CE4E78427}</ProjectGuid>

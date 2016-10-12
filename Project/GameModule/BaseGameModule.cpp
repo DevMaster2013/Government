@@ -55,10 +55,10 @@ void gov::BaseGameModule::finalize()
 	BaseGameObject::finalize();
 }
 
-void gov::BaseGameModule::update()
+void gov::BaseGameModule::update(double elapsedTime)
 {
-	BaseGameObject::update();
+	BaseGameObject::update(elapsedTime);
 
 	for (auto& module : _subModules)
-		module.second->update();
+		module.second->update(elapsedTime);
 }

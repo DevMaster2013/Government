@@ -48,9 +48,9 @@ namespace gov
 		///
 		/// Inherited via BaseGameObject
 		///
-		virtual bool	initialize()	override;
-		virtual void	finalize()		override;
-		virtual void	update()		override;
+		virtual bool	initialize()					override;
+		virtual void	finalize()						override;
+		virtual void	update(double elapsedTime)		override;
 	};
 }
 

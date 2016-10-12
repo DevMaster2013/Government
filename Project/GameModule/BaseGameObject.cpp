@@ -47,6 +47,6 @@ void gov::BaseGameObject::finalize()
 	_id = "";
 }
 
-void gov::BaseGameObject::update()
+void gov::BaseGameObject::update(double elapsedTime)
 {
 }

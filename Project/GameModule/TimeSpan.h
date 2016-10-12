@@ -5,7 +5,7 @@ namespace gov
 	///
 	/// Implements the Game time span that descripe the offset in date and time
 	///
-	class GameTimeSpan
+	class TimeSpan
 	{
 	private:
 		int _days;			/// This descripe the number of days
@@ -18,48 +18,48 @@ namespace gov
 		///
 		/// The Default constructor
 		///
-		GameTimeSpan();
+		TimeSpan();
 
 		///
 		/// The initialization constructor
 		///
-		GameTimeSpan(int days, int hours, int minutes, int seconds, int milliseconds = 0);
+		TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds = 0);
 
 		///
 		/// The Copy Constructor
 		///
-		GameTimeSpan(const GameTimeSpan& src);
+		TimeSpan(const TimeSpan& src);
 
 		///
 		/// The destructor of the game time span
 		///
-		~GameTimeSpan();
+		~TimeSpan();
 
 	public:
 		///
 		/// Construct a game time span from number of milliseconds
 		///
-		static GameTimeSpan fromMilliseconds(double milliseconds);
+		static TimeSpan fromMilliseconds(double milliseconds);
 
 		///
 		/// Construct a game time span from number of seconds
 		///
-		static GameTimeSpan fromSeconds(double seconds);
+		static TimeSpan fromSeconds(double seconds);
 
 		///
 		/// Construct a game time span from number of minutes
 		///
-		static GameTimeSpan fromMinutes(double minutes);
+		static TimeSpan fromMinutes(double minutes);
 
 		///
 		/// Construct a game time span from number of hours
 		///
-		static GameTimeSpan fromHours(double hours);
+		static TimeSpan fromHours(double hours);
 
 		///
 		/// Construct a game time span from number of days
 		///
-		static GameTimeSpan fromDays(double days);
+		static TimeSpan fromDays(double days);
 
 	public:
 		///
@@ -114,31 +114,42 @@ namespace gov
 
 	public:
 		///
+		/// Simplify the timespan by letting each component sums to the larger component
+		///
+		TimeSpan simplify() const;
+
+		///
+		/// Reverse the time span to be negative
+		///
+		TimeSpan reverse() const;
+
+	public:
+		///
 		/// Assignment operator
 		///
-		GameTimeSpan& operator=(const GameTimeSpan& rhs);
+		TimeSpan& operator=(const TimeSpan& rhs);
 
 		///
 		/// Comparison operators
 		///
-		bool operator==(const GameTimeSpan& rhs);
-		bool operator!=(const GameTimeSpan& rhs);
-		bool operator> (const GameTimeSpan& rhs);
-		bool operator< (const GameTimeSpan& rhs);
-		bool operator>=(const GameTimeSpan& rhs);
-		bool operator<=(const GameTimeSpan& rhs);
+		bool operator==(const TimeSpan& rhs);
+		bool operator!=(const TimeSpan& rhs);
+		bool operator> (const TimeSpan& rhs);
+		bool operator< (const TimeSpan& rhs);
+		bool operator>=(const TimeSpan& rhs);
+		bool operator<=(const TimeSpan& rhs);
 
 		///
 		/// Arithmatics operators
 		///
-		GameTimeSpan operator+(const GameTimeSpan& rhs);
-		GameTimeSpan operator-(const GameTimeSpan& rhs);
-		GameTimeSpan operator*(double scale);
-		GameTimeSpan operator/(double scale);
-		GameTimeSpan& operator+=(const GameTimeSpan& rhs);
-		GameTimeSpan& operator-=(const GameTimeSpan& rhs);
-		GameTimeSpan& operator*=(double scale);
-		GameTimeSpan& operator/=(double scale);
+		TimeSpan operator+(const TimeSpan& rhs);
+		TimeSpan operator-(const TimeSpan& rhs);
+		TimeSpan operator*(double scale);
+		TimeSpan operator/(double scale);
+		TimeSpan& operator+=(const TimeSpan& rhs);
+		TimeSpan& operator-=(const TimeSpan& rhs);
+		TimeSpan& operator*=(double scale);
+		TimeSpan& operator/=(double scale);
 	};
 }
 

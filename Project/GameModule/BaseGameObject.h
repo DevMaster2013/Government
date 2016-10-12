@@ -63,7 +63,7 @@ namespace gov
 		///
 		/// Update the game object
 		///
-		virtual void update();
+		virtual void update(double elapsedTime);
 	};
 }
 
