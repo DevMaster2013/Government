@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IGameLog.h"
 #include <fstream>
 #include <string>
 
@@ -8,7 +9,7 @@ namespace gov
 	///
 	/// The basic log for the game
 	///
-	class BaseGameLog
+	class BaseGameLog : public IGameLog
 	{
 	protected:
 		std::ofstream _logStream;	/// The stream used in logging messages
@@ -22,7 +23,7 @@ namespace gov
 		///
 		/// The initialization constructor
 		///
-		BaseGameLog(const std::string& logName);
+		BaseGameLog(const std::string& fileName);
 
 		///
 		/// The destructor of the game log
@@ -31,18 +32,10 @@ namespace gov
 
 	public:
 		///
-		/// Create the log stream
+		/// Inheretied from IGameLog
 		///
-		virtual bool create(const std::string& logName);
-
-		///
-		/// Log the message into the logging stream
-		///
-		virtual void log(const std::string& message);
-
-		///
-		/// Close the log stream
-		///
-		virtual void close();
+		virtual bool create(const std::string& fileName) override;
+		virtual void log(const std::string& message) override;
+		virtual void close() override;
 	};
 }

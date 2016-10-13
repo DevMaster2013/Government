@@ -22,19 +22,24 @@
     <ClInclude Include="BaseGameModule.h" />
     <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="BaseGameLog.h" />
+    <ClInclude Include="ConsoleLog.h" />
     <ClInclude Include="DateTime.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameClock.h" />
     <ClInclude Include="GameModule.h" />
+    <ClInclude Include="IGameLog.h" />
+    <ClInclude Include="LogManager.h" />
     <ClInclude Include="TimeSpan.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseGameLog.cpp" />
     <ClCompile Include="BaseGameModule.cpp" />
     <ClCompile Include="BaseGameObject.cpp" />
+    <ClCompile Include="ConsoleLog.cpp" />
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameClock.cpp" />
+    <ClCompile Include="LogManager.cpp" />
     <ClCompile Include="TimeSpan.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

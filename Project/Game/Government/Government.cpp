@@ -17,12 +17,10 @@ class MyGame : public Game
 	{
 		const DateTime& currentTime = _gameClock.getCurrentTime();
 
-		std::cout << "Current Time: ";
-		std::cout << currentTime.getDay() << "\\" << currentTime.getMonth() << "\\" << currentTime.getYear() << " ";
-		std::cout << currentTime.getHour() << ":" << currentTime.getMinute() << ":" << currentTime.getSecond() << ".";
-		std::cout << currentTime.getMillisecond() << std::endl;
-
-		_sleep(1000);
+		//std::cout << "Current Time: ";
+		//std::cout << currentTime.getDay() << "\\" << currentTime.getMonth() << "\\" << currentTime.getYear() << " ";
+		//std::cout << currentTime.getHour() << ":" << currentTime.getMinute() << ":" << currentTime.getSecond() << ".";
+		//std::cout << currentTime.getMillisecond() << std::endl;
 	}
 };
 

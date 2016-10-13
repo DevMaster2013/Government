@@ -10,8 +10,8 @@ namespace gov
 	class Game
 	{
 	protected:
-		GameClock _gameClock;	/// The game clock
-		bool _gameActive;		/// Is the game active or not
+		GameClock _gameClock;		/// The game clock
+		bool _gameActive;			/// Is the game active or not
 
 	public:
 		///
@@ -55,6 +55,12 @@ namespace gov
 		/// Implemented on derived classes to tweak finalization of game
 		///
 		virtual void onExitGame();
+
+	private:
+		///
+		/// Initialize game logging mechanism
+		///
+		void initializeLogging();
 	};
 }
 

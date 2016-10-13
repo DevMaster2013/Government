@@ -1,0 +1,3 @@
+13/10/2016 14:5:35 - Logging manager created
+13/10/2016 14:5:35 - Game initialized success
+13/10/2016 14:5:35 - Game started

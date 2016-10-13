@@ -4,9 +4,9 @@ gov::BaseGameLog::BaseGameLog()
 {
 }
 
-gov::BaseGameLog::BaseGameLog(const std::string & logName)
+gov::BaseGameLog::BaseGameLog(const std::string & fileName)
 {
-	create(logName);
+	create(fileName);
 }
 
 gov::BaseGameLog::~BaseGameLog()
@@ -14,11 +14,11 @@ gov::BaseGameLog::~BaseGameLog()
 	close();
 }
 
-bool gov::BaseGameLog::create(const std::string & logName)
+bool gov::BaseGameLog::create(const std::string & fileName)
 {
 	close();
 
-	_logStream.open(logName, std::ios_base::out);
+	_logStream.open(fileName, std::ios_base::out);
 	if (_logStream.fail())
 		return false;
 
@@ -27,8 +27,9 @@ bool gov::BaseGameLog::create(const std::string & logName)
 
 void gov::BaseGameLog::log(const std::string & message)
 {
+	std::string msgT = message + std::string("\n");
 	if (!_logStream.bad())
-		_logStream.write(message.c_str(), message.size());
+		_logStream.write(msgT.c_str(), msgT.size());
 }
 
 void gov::BaseGameLog::close()
