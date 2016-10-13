@@ -55,6 +55,7 @@ void gov::Game::exitGame()
 	onExitGame();
 
 	LOGMNG->log("Game exited");
+	LogManager::finalizeLogManager();
 }
 
 bool gov::Game::onInitGame()
